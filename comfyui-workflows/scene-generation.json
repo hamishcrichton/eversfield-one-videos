@@ -1,0 +1,60 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "WanT2V_ModelLoader",
+      "pos": [50, 200],
+      "size": [300, 100],
+      "properties": {},
+      "widgets_values": ["wan2.2_t2v_720p.safetensors", "fp16"]
+    },
+    {
+      "id": 2,
+      "type": "WanT2V_TextEncode",
+      "pos": [450, 100],
+      "size": [400, 250],
+      "properties": {},
+      "widgets_values": [
+        "clean-lined digital illustration style, corporate cartoon, friendly male fire safety consultant, mid-30s, medium build, navy blue polo under high-visibility yellow safety vest, dark slate trousers, black safety boots, short brown hair, standing in front of a modern residential apartment building, holding a clipboard, looking slightly concerned, overcast sky, professional setting, slight camera push-in, subtle wind movement, clean illustration style, flat colours with soft shadows",
+        "photorealistic, 3D render, ugly, deformed, blurry, low quality"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "WanT2V_Sampler",
+      "pos": [950, 200],
+      "size": [300, 300],
+      "properties": {},
+      "widgets_values": [720, 480, 81, 30, 7.0, 428571]
+    },
+    {
+      "id": 4,
+      "type": "WanT2V_Decode",
+      "pos": [1350, 200],
+      "size": [200, 100],
+      "properties": {}
+    },
+    {
+      "id": 5,
+      "type": "VHS_VideoCombine",
+      "pos": [1600, 200],
+      "size": [300, 300],
+      "properties": {},
+      "widgets_values": [16, "video/h264-mp4", "scene"]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "MODEL"],
+    [2, 1, 0, 3, 0, "MODEL"],
+    [3, 2, 0, 3, 1, "CONDITIONING"],
+    [4, 3, 0, 4, 0, "LATENT"],
+    [5, 4, 0, 5, 0, "IMAGE"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "info": "Eversfield One scene generation workflow using Wan 2.2. Edit the prompt (node 2) for different scenes. Adjust frames in node 3 (81 = ~5s at 16fps). Note: Wan 2.2 node names may vary by plugin version - adjust class_type if needed."
+  }
+}

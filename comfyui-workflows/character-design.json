@@ -1,0 +1,79 @@
+{
+  "last_node_id": 9,
+  "last_link_id": 9,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [50, 200],
+      "size": [300, 100],
+      "properties": {},
+      "widgets_values": ["flux1-dev.safetensors"]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [450, 100],
+      "size": [400, 200],
+      "properties": {},
+      "widgets_values": [
+        "clean-lined digital illustration of a friendly professional male fire safety consultant, mid-30s, medium build, warm approachable expression, slight confident smile, wearing navy blue polo shirt under high-visibility yellow safety vest, dark slate work trousers, black safety boots, clean-shaven, short brown hair, clear eyes, corporate illustration style, flat colours with subtle shading, colour palette: navy slate (#1e293b), amber yellow (#f59e0b), white background, professional and trustworthy, front-facing portrait, looking directly at viewer, shoulders square, head and shoulders visible"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [450, 350],
+      "size": [400, 150],
+      "properties": {},
+      "widgets_values": [""]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [450, 550],
+      "size": [300, 100],
+      "properties": {},
+      "widgets_values": [1024, 1024, 1]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [950, 200],
+      "size": [300, 400],
+      "properties": {},
+      "widgets_values": [428571, "fixed", 28, 3.5, "euler", "simple", 1.0]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [1350, 200],
+      "size": [200, 100],
+      "properties": {}
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [1600, 200],
+      "size": [300, 300],
+      "properties": {},
+      "widgets_values": ["character"]
+    }
+  ],
+  "links": [
+    [1, 4, 0, 3, 0, "MODEL"],
+    [2, 6, 0, 3, 1, "CONDITIONING"],
+    [3, 7, 0, 3, 2, "CONDITIONING"],
+    [4, 5, 0, 3, 3, "LATENT"],
+    [5, 4, 1, 6, 0, "CLIP"],
+    [6, 4, 1, 7, 0, "CLIP"],
+    [7, 3, 0, 8, 0, "LATENT"],
+    [8, 4, 2, 8, 1, "VAE"],
+    [9, 8, 0, 9, 0, "IMAGE"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "info": "Eversfield One character design workflow. Edit the positive prompt (node 6) to change poses. Keep seed fixed (node 3, first widget) for character consistency."
+  }
+}

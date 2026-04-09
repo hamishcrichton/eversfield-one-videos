@@ -1,0 +1,49 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [50, 100],
+      "size": [300, 300],
+      "properties": {},
+      "widgets_values": ["front-facing.png"]
+    },
+    {
+      "id": 2,
+      "type": "LoadAudio",
+      "pos": [50, 450],
+      "size": [300, 100],
+      "properties": {},
+      "widgets_values": ["01-hook.wav"]
+    },
+    {
+      "id": 3,
+      "type": "MuseTalkRun",
+      "pos": [500, 200],
+      "size": [300, 200],
+      "properties": {},
+      "widgets_values": [30, 0.5]
+    },
+    {
+      "id": 4,
+      "type": "VHS_VideoCombine",
+      "pos": [900, 200],
+      "size": [300, 300],
+      "properties": {},
+      "widgets_values": [30, "video/h264-mp4", "lipsync"]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 3, 0, "IMAGE"],
+    [2, 2, 0, 3, 1, "AUDIO"],
+    [3, 3, 0, 4, 0, "IMAGE"],
+    [4, 2, 0, 4, 1, "AUDIO"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "info": "Eversfield One lip-sync workflow using MuseTalk. Upload your character image (node 1) and voice audio (node 2). Output is an MP4 with lip-synced character animation. Note: MuseTalk node names may vary by ComfyUI plugin version - adjust class_type if needed."
+  }
+}

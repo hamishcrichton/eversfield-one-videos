@@ -1,0 +1,29 @@
+# Generated assets (large binary files - don't commit to git)
+assets/character-pack/*.png
+assets/character-pack/upscaled/
+assets/music/*.mp3
+assets/music/*.wav
+assets/fonts/*.ttf
+assets/fonts/*.otf
+
+# Video production files (too large for git)
+videos/*/voice/*.wav
+videos/*/voice/*.mp3
+videos/*/screen-recordings/*.mp4
+videos/*/animations/*.mp4
+videos/*/character/*.png
+videos/*/resolve-project/
+videos/*/export/*.mp4
+
+# Keep directory structure
+!**/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
