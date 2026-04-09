@@ -67,7 +67,7 @@ fi
 
 # ComfyUI-MuseTalk (for lip-sync)
 if [ ! -d "ComfyUI-MuseTalk" ]; then
-    git clone https://github.com/TMElyrawormo/ComfyUI-MuseTalk.git
+    git clone https://github.com/chaojie/ComfyUI-MuseTalk.git
     cd ComfyUI-MuseTalk && pip install -r requirements.txt -q 2>/dev/null || true && cd ..
 fi
 
