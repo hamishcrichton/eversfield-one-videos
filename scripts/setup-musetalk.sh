@@ -25,7 +25,7 @@ mkdir -p "${MUSETALK_DIR}"
 
 # --- Create venv ---
 echo "[2/6] Creating Python virtual environment..."
-python3 -m venv "${VENV_DIR}" --system-site-packages=false
+python3 -m venv "${VENV_DIR}"
 # Activate
 source "${VENV_DIR}/bin/activate"
 pip install --upgrade pip wheel setuptools -q
