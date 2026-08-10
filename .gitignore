@@ -27,3 +27,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# personal assistant config (committed CLAUDE.md holds shared facts)
+CLAUDE.local.md

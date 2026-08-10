@@ -20,6 +20,17 @@ Video production pipeline for Eversfield One platform demo videos. Uses open-sou
 - Scripts talk to ComfyUI's HTTP API, so they run on any machine with network access to the RunPod pod
 - Use `python3` to run scripts (not `python`)
 
+## Working with Claude
+Task routing follows the global dev cycle (global CLAUDE.md): trivial → do + verify; small → plan mode,
+then `/code-review` before commit; feature/multi-session → superpowers brainstorming → writing-plans →
+executing-plans (+ test-driven-development); non-obvious bugs → systematic-debugging.
+
+Repo specifics:
+- **Test:** none configured (no test suite — verify scripts manually against the RunPod ComfyUI API)
+- **Lint/typecheck:** none configured
+- **Done means:** scripts run cleanly end-to-end; character consistency constants stay in sync (see below)
+- **Plans/specs live in:** `docs/plans/`
+
 ## Character Consistency
 
 The character is defined by prompt text in `generate-character.py`. The `CHARACTER_BASE` constant must stay consistent across all scripts. If you change the character description, update it in:
