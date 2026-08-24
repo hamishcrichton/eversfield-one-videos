@@ -4,6 +4,21 @@
 
 Video production pipeline for Eversfield One platform demo videos. Uses open-source AI tools on RunPod cloud GPUs.
 
+## Notion Context
+
+| Resource     | Reference |
+|--------------|-----------|
+| Project      | Eversfield One — Platform — page `339f84ba-16d6-817a-afd1-e49d14f699a3` |
+| Repository   | row `3c6f84ba-16d6-810d-9a48-e29ba03bc0f3` |
+| Product      | Eversfield One — page `3c2f84ba-16d6-8116-bde4-cd6097463155` |
+| Client       | ECL — page `3c2f84ba-16d6-817c-9861-c077bd0a34aa` |
+| Tasks DS     | `4e273ca5-0803-4122-a59c-be9020486ff6` |
+| Decisions DS | `dff9636f-d1bf-4272-b04d-dc8534282f06` |
+| Conventions  | `33af84ba-16d6-8159-8079-e167cd4113a1` |
+| Hub          | `339f84ba-16d6-81ce-8d0c-cf98d2dbae4b` |
+
+Read this block before any Notion call; fetch by ID (never bulk). Contract: the Conventions page (v2).
+
 ## Key Files
 
 - `videos/01-platform-demo/script.md` — Narration script with timecodes
